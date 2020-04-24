@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MyNavigation</string>
+    <string name="text_tab_message">微信</string>
+    <string name="text_tab_contact">通讯录</string>
+    <string name="text_tab_find">发现</string>
+    <string name="text_tab_profile">我</string>
+</resources>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tabs_area"/>
+
+    <View
+        android:id="@+id/tabs_area"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tabs_area_height"
+        android:background="@color/colorTabsBackground"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_height"
+        android:background="@color/colorDivider"
+        app:layout_constraintTop_toBottomOf="@id/view_pager"/>
+
+    <com.dev.mynavigation.TabConstraintLayout
+        android:id="@+id/tab_message"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingVertical="@dimen/tab_area_vertical_padding"
+        app:layout_constraintTop_toTopOf="@id/tabs_area"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tab_contact">
+
+        <ImageView
+            android:layout_width="@dimen/tab_image_width"
+            android:layout_height="@dimen/tab_image_height"
+            android:src="@mipmap/message_normal"
+            android:tint="@android:color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:layout_width="@dimen/tab_image_width"
+            android:layout_height="@dimen/tab_image_height"
+            android:src="@mipmap/message_selected"
+            android:alpha="0"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_tab_message"
+            android:textSize="@dimen/tab_text_size"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </com.dev.mynavigation.TabConstraintLayout>
+
+    <com.dev.mynavigation.TabConstraintLayout
+        android:id="@+id/tab_contact"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingVertical="@dimen/tab_area_vertical_padding"
+        app:layout_constraintTop_toTopOf="@id/tabs_area"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tab_message"
+        app:layout_constraintEnd_toStartOf="@id/tab_find">
+
+        <ImageView
+            android:layout_width="@dimen/tab_image_width"
+            android:layout_height="@dimen/tab_image_height"
+            android:src="@mipmap/contact_normal"
+            android:tint="@android:color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:layout_width="@dimen/tab_image_width"
+            android:layout_height="@dimen/tab_image_height"
+            android:src="@mipmap/contact_selected"
+            android:alpha="0"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_tab_contact"
+            android:textSize="@dimen/tab_text_size"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </com.dev.mynavigation.TabConstraintLayout>
+
+    <com.dev.mynavigation.TabConstraintLayout
+        android:id="@+id/tab_find"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingVertical="@dimen/tab_area_vertical_padding"
+        app:layout_constraintTop_toTopOf="@id/tabs_area"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tab_contact"
+        app:layout_constraintEnd_toStartOf="@id/tab_profile">
+
+        <ImageView
+            android:layout_width="@dimen/tab_image_width"
+            android:layout_height="@dimen/tab_image_height"
+            android:src="@mipmap/find_normal"
+            android:tint="@android:color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:layout_width="@dimen/tab_image_width"
+            android:layout_height="@dimen/tab_image_height"
+            android:src="@mipmap/find_selected"
+            android:alpha="0"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_tab_find"
+            android:textSize="@dimen/tab_text_size"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </com.dev.mynavigation.TabConstraintLayout>
+
+    <com.dev.mynavigation.TabConstraintLayout
+        android:id="@+id/tab_profile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingVertical="@dimen/tab_area_vertical_padding"
+        app:layout_constraintTop_toTopOf="@id/tabs_area"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tab_find"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="@dimen/tab_image_width"
+            android:layout_height="@dimen/tab_image_height"
+            android:src="@mipmap/profile_normal"
+            android:tint="@android:color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:layout_width="@dimen/tab_image_width"
+            android:layout_height="@dimen/tab_image_height"
+            android:src="@mipmap/profile_selected"
+            android:alpha="0"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_tab_profile"
+            android:textSize="@dimen/tab_text_size"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </com.dev.mynavigation.TabConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
